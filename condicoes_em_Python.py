@@ -33,3 +33,50 @@ elif conversao == 2:
     print('\nBase de conversao Octal: {}\n'.format(octal))
 else:
     print('\nBase de conversao Hexadecimal: {}\n'.format(hexa))
+
+
+# Desafio 038
+# Escreva um programa que leia DOIS NÚMEROS inteiros e compare-os, mostrando na tela uma mensagem:
+# O PRIMEIRO VALOR é MAIOR
+# O SEGUNDO VALOR é MAIOR
+# NÃO EXISTE valor maior, os dois são IGUAIS
+print('==============================================================================')
+numero1 = int(input('Digite um numero inteiro: '))
+numero2 = int(input('Digite o segundo numero inteiro: '))
+if numero1 > numero2:
+    print('O primeiro valor e maior: {}'.format(numero1))
+elif numero2 > numero1:
+    print('O segundo valor e maior: {}'.format(numero2))
+else:
+    print('O primeiro valor e o segundo sao iguais')
+
+
+# Desafio 039
+# Faça um programa que leia o ano de nascimento de um jovem e informe, de acordo com sua idade:
+# - Se ele AINDA VAI SE ALISTAR ao serviço militar.
+# - Se é a HORA DE SE ALISTAR.
+# - Se já PASSOU DO TEMPO do alistamento.
+# Seu programa tambem deverá mostrar o tempo que falta ou que passou do prazo.
+print('==============================================================================')
+import datetime
+anodenascimento = int(input('digite seu ano de nascimento: '))
+date = datetime.date.today()
+data = int(date.strftime('%Y'))  # Poderia usar so date.today().year para o ano atual
+idade = data - anodenascimento
+print('Sua idade em {} e {} anos'.format(data, idade))
+if idade >= 16 and idade < 18:
+    saldo = 18 - idade
+    print('Se prepare para se alistar daqui {} anos'.format(saldo))
+    ano = data + saldo
+    print('Seu alistamento sera em {}'.format(ano))
+elif idade == 18:
+    print('Voce tem que se alistar IMEDIATAMENTE')
+elif idade > 18 and idade < 30:
+    saldo = idade - 18
+    print('Deveria ter se alistado a {} anos'.format(saldo))
+    ano = data - saldo
+    print('Seu alistamento foi em {}'.format(ano))
+elif idade > 30:
+    print('Ja deve ter servido ou dispensado')
+else:
+    print('Aproveita ainda ta longe de se alistar')
