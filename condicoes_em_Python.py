@@ -80,3 +80,46 @@ elif idade > 30:
     print('Ja deve ter servido ou dispensado')
 else:
     print('Aproveita ainda ta longe de se alistar')
+
+
+# Desafio 040
+# Crie um programa que leia duas notas de um aluino e calculesua média, mostrando uma mensagem no final, deacordo com a media atingida:
+# - Media abaixo de 5.0: REPROVADO
+# - Média entre 5.0 e 6.9: RECUPEERAÇÃO
+# - Média 7.0 ou sueperior: APROVADO
+print('==============================================================================')
+nota1 = float(input('Digite sua primeria nota: '))
+nota2 = float(input('Digite sua segunda nota: '))
+media = (nota1 + nota2) / 2
+if media <= 5.0:
+    print('\33[31mREPROVADO!!!\33[m \nSua media foi {:.1f}'.format(media))
+elif media > 5.0 and media < 6.9:
+    print('Voce esta em \33[33mRECUPERACAO!!!\33[m \nSua media foi {:.1f}'.format(media))
+else:
+    print('\33[1;34mAPROVADO PARABENS!!!\33[m \nSua media foi {:.1f}'.format(media))
+
+
+
+# Desafio 041
+# A Confederação Nacional de Natação precisa de um programa que leia o ano de nascimento de um atleta e mostre sua categoria, de acordo com a idade:
+# - Até 9 anos: MIRIM
+# - Até 14 anos: INFANTIL
+# - Até 19 anos: JUNIOR
+# - Até 20 anos: SÊNIOR
+# - Acima: MASTER
+print('==============================================================================')
+from datetime import date
+nascatleta = int(input('Digite seu ano de nascimento: '))
+anoatual = date.today().year
+categoria = anoatual - nascatleta
+if categoria <= 9:
+    print('Voce tem {} anos sua categoria e MIRIM'.format(categoria))
+elif categoria <= 14:
+    print('Voce tem {} anos sua categoria e INFANTIL'.format(categoria))
+elif categoria <= 19:
+    print('Voce tem {} anos sua categoria e JUNIOR'.format(categoria))
+elif categoria <= 25:
+    print('Voce tem {} anos sua categoria e SENIOR'.format(categoria))
+else:
+    print('Voce tem {} anos sua categoria e a MASTER'.format(categoria))
+
