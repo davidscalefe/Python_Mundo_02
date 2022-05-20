@@ -123,3 +123,45 @@ elif categoria <= 25:
 else:
     print('Voce tem {} anos sua categoria e a MASTER'.format(categoria))
 
+# Desafio 042
+# Refaça o DESAFIO 035 dos triângulos, acrecentando o recurso de mostrar que tipo de triangulo será formado:
+# - EQUILÁTERO: todos os lados iguais 
+# - ISÓSCELES: dois lados iguais
+# - ESCALENO: todos os lados diferentes
+print('==============================================================================')
+r1 = float(input('Primeira reta: '))
+r2 = float(input('Segunda reta: '))
+r3 = float(input('Terceira reta: '))
+if r1 < r2 + r3 and r2 < r1 + r3 and r3 < r1 + r2:
+    if r1 == r2 == r3:
+        print('Pode formar um triangulo \nTodos os lados sao iguais \nDo tipo \033[1;31mEQUILATERO\033[m')
+    elif r1 != r2 !=r3 !=r1:
+        print('Pode formar um triangulo \nTodos os lados sao diferentes! \nDo tipo \033[1;34mESCALENO\033[m')
+    else:
+        print('Pode formar um triangulo \nDois lados sao iguais! \nDo tipo \033[1;35mISOSCELES\033[m')
+else:
+    print('\033[4;31mNão pode formar um triangulo\033[m')
+
+
+# Desafio 043
+# Desenvolva uma lógica que leia o peso e a altura de uma pessoa, calcule seu IMC e mostre seu status, de acordo com a tabela abaixo:
+# - Abaixo de 18.5: Abaixo do peso
+# - Entre 18.5 e 25: Peso ideal
+# - 25 até 30: Sobrepeso 
+# - 30 até 40: Obesidade
+# - Acima de 40: Obesidade mórbida
+print('==============================================================================')
+peso = float(input('Digite seu peso: '))
+altura = float(input('Digite sua altura: '))
+status = peso / (altura * altura)
+if status < 18.5:
+    print('Voce esta \033[1;36mABAIXO DO PESO!\033[m \nSeu indice de massa corporal e {:.2f}'.format(status))
+elif status >= 18.5 and status < 25:            # Poria nao usar o and e usar so um status ex: elif 18.5 <= status < 25
+    print('Voce esta no \033[1;32mPESO IDEAL!\033[m \nSeu indice de massa corporal e {:.2f}'.format(status))
+elif status >= 25 and status < 30:
+    print('Voce esta com \033[1;33mSOBRREPESO!\033[m \nSeu indice de massa corporal e {:.2f}'.format(status))
+elif status >= 30 and status < 40:
+    print('Voce esta com \033[1;31mOBESIDADE!\033[m \nSeu indice de massa corporal e {:.2f}'.format(status))
+else:
+    print('Voce esta com \033[1;41;31mOBESIDADE MORBIDA!\033[m\nProcure ajuda urgente! \nSeu indice de massa corporal e {:.2f}'.format(status))
+
