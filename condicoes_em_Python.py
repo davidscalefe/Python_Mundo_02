@@ -165,3 +165,24 @@ elif status >= 30 and status < 40:
 else:
     print('Voce esta com \033[1;41;31mOBESIDADE MORBIDA!\033[m\nProcure ajuda urgente! \nSeu indice de massa corporal e {:.2f}'.format(status))
 
+# Desafio 044
+# Elabore um programa que calcule o valor a ser pago por um produto, considerando o seu PREÇO NORMAL e CONDIÇÃO DE PAGAMENTO:
+# - À vista DINHEIRO/CHEQUE: 10% de desconto
+# - À vista no CARTÃO: 5% de desconto
+# - em até 2x no CARTÃO: preço normal
+# - 3x OU MAIS no cartão: 20% de juros
+produto = float(input('Qual o valor do produto? R$'))
+opcao = int(input('\nEscolha a opcao de pagamento: \
+                \n[1] A vista DINHEIRO/CHEQUE 10% de desconto \
+                \n[2] A vista no CARTÃO: 5% de desconto \
+                \n[3] Ate 2x no CARTAO preco normal \
+                \n[4] 3x ou mais no CARTAO 20% de juros \n'))
+if opcao == 1:
+    print('O valor do produto com os 10% de desconto sera de R${:.2f} '.format(produto - (produto * 10 / 100)))
+elif opcao == 2:
+    print('O valor a ser pago com o desconto de 5% sera de R${:.2f}'.format(produto - (produto * 5 / 100)))
+elif opcao == 3:
+    print('Valor a ser  pago e de R${:.2f}'.format(produto))
+else:
+    print('Valor a pagar com 20% de juros sera de R${:.2f}'.format(produto + (produto * 20 / 100)))
+
