@@ -171,6 +171,7 @@ else:
 # - À vista no CARTÃO: 5% de desconto
 # - em até 2x no CARTÃO: preço normal
 # - 3x OU MAIS no cartão: 20% de juros
+print('==============================================================================')
 produto = float(input('Qual o valor do produto? R$'))
 opcao = int(input('\nEscolha a opcao de pagamento: \
                 \n[1] A vista DINHEIRO/CHEQUE 10% de desconto \
@@ -184,5 +185,44 @@ elif opcao == 2:
 elif opcao == 3:
     print('Valor a ser  pago e de R${:.2f}'.format(produto))
 else:
-    print('Valor a pagar com 20% de juros sera de R${:.2f}'.format(produto + (produto * 20 / 100)))
+    parcela = int(input('Em quantas vezes: '))
+    total = produto + (produto * 20 / 100)
+    print('Valor  total do produto R${}'.format(total))
+    print('O valor a pagar vai ser de {} vezes de R${:.2f}'.format(parcela, total / parcela))
+
+
+# Desafio 045
+# Crie um programa que faça o computador jogar JOKENPÔ com você.
+print('==============================================================================')
+from random import randint
+from time import sleep
+print('VAMOS JOGAR!!!')
+jogador = int(input('''Escolha a opcao: 
+[0] Pedra, 
+[1] Papel, 
+[2] Tesoura: 
+Qual a sua opcao? '''))
+print('JO')
+sleep(1)
+print('KEN')
+sleep(1)
+print('PO!!!')
+sleep(1)
+print('-=' * 11)
+itens = ('Pedra', 'Papel', 'Tesoura')
+computador = randint(0,2)
+if jogador == 0 and computador == 1:
+    print('Voce Perdeu! \nComputador jogou {} \nVoce jogou {}'.format(itens[computador], itens[jogador]))
+elif jogador == 1 and  computador == 2:
+    print('Voce Perdeu! \nComputador jogou {} \nVoce jogou {}'.format(itens[computador], itens[jogador]))
+elif jogador == 2 and computador == 0:
+    print('Voce Perdeu! \nComputador jogou {} \nVoce jogou {}'.format(itens[computador], itens[jogador]))
+elif jogador == 1 and computador == 0:
+    print('Voce Ganhou! \nComputador jogou {} \nVoce jogou {}'.format(itens[computador], itens[jogador]))
+elif jogador == 2 and  computador == 1:
+    print('Voce Ganhou! \nComputador jogou {} \nVoce jogou {}'.format(itens[computador], itens[jogador]))
+elif jogador == 0 and computador == 2:
+    print('Voce Ganhou! \nComputador jogou {} \nVoce jogou {}'.format(itens[computador], itens[jogador]))
+else:
+    print('EMPATE! \nComputador jogou {} \nVoce jogou {}'.format(itens[computador], itens[jogador]))
 
