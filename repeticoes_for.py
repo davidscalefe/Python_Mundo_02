@@ -29,3 +29,42 @@ for i in range(1, 501, 2):
         quantidade += 1
 print('Quantidade de numeros imparares multiplos de 3 sao: {}'.format(quantidade))
 print('A soma de todos os numeros impares multiplos de 3 de 1 a 500 e: {}'.format(soma))
+
+
+# Desafio 049
+# Refaça p DESAFIO 009, mostrando a tabuada de um numero que o usuario escolher, so que agora utilizando um LAÇO FOR.
+print('==============================================================================')
+from time import sleep
+print('------TABUADA------')
+tabuada= int(input('Digite um numero: '))
+for contador in range(1, 11):
+    sleep(0.5)
+    print('{} x {} = {}'.format(tabuada, contador, tabuada*contador))
+print('FIM!')
+
+
+# Desafio 050
+# desenvolva um programa que leia SEIS NUMEROS INTEIROS e mostre a soma apenas daqueles que foram PARES. Se o valor digitado for IMPAR, desconsidere-o.
+print('==============================================================================')
+print('---DIGITE SEIS NUMEROS INTEIRO!---')
+soma1 = 0
+for x in range(1, 7):
+    n1 = int(input('Digite o {} numero: '.format(x)))
+    if n1 % 2 == 0:
+        soma1 += n1
+if soma1 == 0:
+    print('Nao digitou nenhum numero PAR')
+else:
+    print('A soma dos numeros PARES digitado: {}'.format(soma1))
+
+
+# Desafio 051
+# Desenvolva um programa que leia o PRIIMEIRO TERMO e a RAZÃO de uma PA. No final =, mostre os 10 primeiros termos dessa progressao.
+print('==============================================================================')
+print('PRIMEIROS TERMOS DE UM PA')
+a1 = int(input('Digite o Primeiro termo: '))
+r = int(input('Razao: '))
+for n in range(0,10):
+    n = a1 + r * (n + 1)
+    print('{}'.format(n), end=' → ')
+print('FIM!')
