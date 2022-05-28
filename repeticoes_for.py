@@ -68,3 +68,58 @@ for n in range(0,10):
     n = a1 + r * (n + 1)
     print('{}'.format(n), end=' → ')
 print('FIM!')
+
+
+# Desafio 052
+# Faça um programa que leia um NUMERO INTEIRO e diga se ele e ou nao um NUMERO PRIMO.
+print('==============================================================================')
+ni = int(input('Digite um numero interio: '))
+t = 0
+for c in range(1, ni + 1):
+    if ni % c == 0:
+        print('\033[33m', end=' ')
+        t += 1
+    else:
+        print('\033[31m', end=' ')
+    print('{} '.format(c), end=' ')
+print('\n\033[mO numero {} foi divisivel {} vezes'. format(ni, t))
+if t == 2:
+    print('Numero PRIMO!')
+else:
+    print('Nao e PRIMO!')
+
+
+# Desafio 053
+# Crie um programa que leia um FRASE qualquer e diga se ela e um PALINDROMO, desconsiderando os espaços.
+# Ex: APOS A SOPA - A SACADA DA CASA - A TORRE DA DERROTA - O LOBO AMA O BOLO - ANOTARAM A DATA DA MARATONA
+print('==============================================================================')
+frase = str(input('Digite uma frase: ')).strip().upper()
+palavras = frase.split()
+juntar = ''.join(palavras)
+inverter = ''
+for letra in range(len(juntar) -1, -1, -1):
+    inverter += juntar[letra]
+print('A frase {} invertida fica {}'.format(juntar, inverter))
+if inverter == juntar:
+    print('A frase e PALINDROMO!')
+else:
+    print('A frase nao e um PALINDROMO!')
+
+
+# Desafio 054
+# Crie um programa que leia o ano de nascimento de sete pessoas. no final, mostre quantas pessoas ainda nao atingiram a maioridade e quantas ja sao maiores.
+print('==============================================================================')
+import datetime
+data = datetime.date.today().year
+quantidade1 = 0
+quantidade2 = 0
+
+for pessoas in range(1, 8):
+    anonascimento = int(input('Digite o ano de nascimento da {}ª pessoa: '.format(pessoas)))
+    maior = data - anonascimento
+    if maior >= 21:
+        quantidade1 += 1
+    else:
+        quantidade2 += 1
+print('{} pessoas sao de maior'.format(quantidade1))
+print('{} pessoas sao de menor'.format(quantidade2))
