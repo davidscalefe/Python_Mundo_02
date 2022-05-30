@@ -123,3 +123,53 @@ for pessoas in range(1, 8):
         quantidade2 += 1
 print('{} pessoas sao de maior'.format(quantidade1))
 print('{} pessoas sao de menor'.format(quantidade2))
+
+
+# Desafio 055
+# Faça um programa que leia o peso de cinco  pessoas. No final, mostre qual foi o maior e o menor peso lidos.
+print('==============================================================================')
+pesomaior = 0
+pesomenor = 0
+for pes in range(1, 6):
+    peso = float(input('Digite o peso da {} pessoa: '.format(pes)))
+    if pes == 1:
+        pesomaior = peso
+        pesomenor = peso
+    else:
+        if peso > pesomaior:
+            pesomaior = peso
+        if peso < pesomenor:
+            pesomenor = peso
+print('\nO Maior peso e {}'.format(pesomaior))
+print('O Menor peso e {}'.format(pesomenor))
+
+
+# Desafio 056
+# Desenvolva um programa que leia o NOME, IDADE, e SEXO de 4 PESSOAS. No final do programa , mostre:
+# A media de idade do grupo,
+# Qual e o nome do homem mais velho.
+# Quantas mulheres tem MENOS DE 20 anos.
+print('==============================================================================')
+somaridade = 0
+mediaidade = 0
+maioridadehomem = 0
+nomevelho = ''
+mulher20 = 0
+for z in range(1, 5):
+    print('---------- {}ª PESSOA ----------'.format(z))
+    nome = str(input('Digite seu nome: ')).strip()
+    idade = int(input('Digite sua idade: '))
+    sexo = str(input('Digite seu sexo [M/F]: ')).strip()
+    somaridade += idade
+    if z == 1 and sexo in 'Mm':
+        maioridadehomem = idade
+        nomevelho = nome
+    if sexo in 'Mn' and idade > maioridadehomem:
+        maioridadehomem = idade
+        nomevelho = nome
+    if sexo in 'Ff' and idade < 20:
+        mulher20 += 1
+mediaidade = somaridade / 4
+print('O homem mais velho e o {} com {} anos'.format(nomevelho, maioridadehomem))
+print('A media de idade do grupo e {} anos'.format(mediaidade))
+print('Tem {} mulheres menor de 20 anos\n'.format(mulher20))
