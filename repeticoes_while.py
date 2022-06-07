@@ -75,6 +75,7 @@ print('Fim')
 # Desafio 060
 # Faça um programa que leia um número qualquer e mostre o seu FATORIAL.
 # Ex: 5! = 5x4x3x2x1 = 120
+print('==============================================================================')
 print('-=-=-= VAMOS QUALCULAR O FATORIAL -=-=-=')
 numero = int(input('Digite um numero: '))
 contador = numero
@@ -86,3 +87,17 @@ while contador > 0:
     total *= contador
     contador -= 1
 print(total)
+
+
+# Desafio 061
+# Refaça o DESAFIO 051, lendo o primeiro termo e a razão de uma PA, mostrando  os 10 PRIMEIROS TERMOS  da progressão usando a estrutura WHILE.
+print('==============================================================================')
+ptermo = int(input('Primeiro termo: '))
+razao = int(input('Razao: '))
+termo = ptermo
+contador = 1
+while contador <= 10:
+    print('{}'.format(termo), end=' → ')
+    termo += razao
+    contador += 1
+print('Fim!')
