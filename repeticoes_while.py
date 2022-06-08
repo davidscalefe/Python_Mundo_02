@@ -101,3 +101,24 @@ while contador <= 10:
     termo += razao
     contador += 1
 print('Fim!')
+
+
+# Desafio 062
+# Melhore o DESAFIO 061, perguntando para o usuario se ele quer mostrar mais alguns termos. O programa encerra quando ele disser que quer mostrar O termos.
+print('==============================================================================')
+print('=-=-=- GERADOR DE PA -=-=-=')
+primeiro = int(input('Primerio termo: '))
+razao = int(input('Razao: '))
+ter = primeiro
+cont = 1
+tot = 0
+mais = 10
+while mais != 0:
+    tot = tot + mais
+    while cont <= tot:
+        print('{} → '.format(ter), end='')
+        ter += razao
+        cont += 1
+    print('Pausa')
+    mais = int(input('Quer ver mais quantas razoes?  '))
+print('Progressao com {} termos mostrados.'.format(tot))
