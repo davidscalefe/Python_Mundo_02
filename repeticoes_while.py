@@ -122,3 +122,25 @@ while mais != 0:
     print('Pausa')
     mais = int(input('Quer ver mais quantas razoes?  '))
 print('Progressao com {} termos mostrados.'.format(tot))
+
+
+print('==============================================================================')
+print('----- SEQUENCIA DE FIBINACCI -----')
+fibo = int(input('Quantos termos voce quer mostrar? '))
+t1 = 0
+t2 = 1
+contador = 0
+if fibo <= 0:
+    print('Por favor digite um numero impar!')
+elif fibo == 1:
+    print('Elemento fibonacci ,{}:'.format(fibo),end='')
+    print(t1)
+else:
+    print('Sequencia fibonacci!')
+    while contador < fibo:
+        print(t1, end=' → ')
+        total = t1 + t2
+        t1 = t2
+        t2 = total
+        contador +=1
+    print('Fim!')
