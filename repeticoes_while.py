@@ -124,6 +124,9 @@ while mais != 0:
 print('Progressao com {} termos mostrados.'.format(tot))
 
 
+# Desafio 063
+# Escreva um programa que leia um número n inteiro qualquer e mostre na tela os n primeiros elementos de uma SEQUENCIA DE FIBONACCI.
+# Ex: 0 → 1 → 1 → 2 → 3 → 5 → 8
 print('==============================================================================')
 print('----- SEQUENCIA DE FIBINACCI -----')
 fibo = int(input('Quantos termos voce quer mostrar? '))
@@ -144,3 +147,39 @@ else:
         t2 = total
         contador +=1
     print('Fim!')
+
+
+# Desafio 064
+# Crie um programa que leia varios numeros inteiros pelo teclado. O programa so vai parar quando o usuario digitar o valor 999, que é a condição de parada. No final, mostre quantos numeros foram digitados  e qual foi a soma entre eles (desconsiderando o flag).
+print('==============================================================================')
+tot = contador = digitados = 0
+while contador != 999:
+    numero = int(input('Digite um numero inteiro [se quiser parar digite 999]: '))
+    contador = numero
+    if contador != 999:
+        tot += contador
+        digitados += 1
+print('Total de numero digitados {}, a soma entre os numeros digitados e {}'.format(digitados, tot))
+
+
+# Desafio 065
+# Crie um programa que leia varios numeros inteiros pelo teclado. No final da execução , mostre a média entre todos os valores e qual foi o maiore o menor valores lidos. O programa deve perguntar ao usuario se ele quer ou não continuar a digitar valores.
+print('==============================================================================')
+soma = total = media = menor = maior = 0
+resposta = str('S')
+while resposta in 'Ss':
+    n1 = int(input('Digite um numero: '))
+    cont = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+    resposta = cont
+    soma += n1
+    total += 1
+    if total == 1:
+        maior = menor = n1
+    else:
+        if n1 > maior:
+            maior = n1
+        if n1 < menor:
+            menor = n1
+media = soma / total
+print('Voce digitou {} numeros e a media foi {}'.format(total, media))
+print('O menor valor digitado foi {} e o maior valor {}'.format(menor, maior))
