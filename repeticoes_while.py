@@ -183,3 +183,38 @@ while resposta in 'Ss':
 media = soma / total
 print('Voce digitou {} numeros e a media foi {}'.format(total, media))
 print('O menor valor digitado foi {} e o maior valor {}'.format(menor, maior))
+
+
+# Desafio 066
+# Crie um programa que leia varios numeros inteiros pelo teclado. o programa so vai parar quando o usuario digitar o valor 999, que e a condição de parada. No final, mostre quantos numeros foram digitados e qual foi a soma entre eles (desconsiderando o flag).
+print('==============================================================================')
+print('='*20)
+print(' DIGITANDO NUMEROS')
+print('='*20)
+quantidade = soma = 0
+while True:
+    n = int(input('Digite um numero (999 para parar): '))
+    if n == 999:
+        break
+    quantidade += 1
+    soma += n
+print(f'Foram digitados {quantidade} numeros e a soma de todos foi {soma}.')
+
+
+# Desafio 067
+# Faça um programa que mostre a tabuada de varios numeros, um de cada vez, para cada valor digitado pelo usuario. O programa sera interrompido quando o numero solicitado for negativo.
+print('==============================================================================')
+from time import sleep
+print('-----TABUADA-----')
+while True:
+    tabuada = int(input('Quer ver a tabuada de qual numero: '))
+    if tabuada < 0:
+        break
+    print('~'*40)
+    for c in range(0, 11):
+        sleep(0.2)
+        print(f'{tabuada} x {c} = {tabuada * c}')
+    print('~'*40)
+print('Finalizando tabuada!')
+sleep(1)
+print('Fim')
