@@ -218,3 +218,70 @@ while True:
 print('Finalizando tabuada!')
 sleep(1)
 print('Fim')
+
+
+# Desafio 068
+# Faça um programa que jogue par ou impar com o computador. O jogo so sera interrompido quando o jogador perder, mostrando o total de vitorias consecutivas que ele conquistou no final do jogo.
+print('==============================================================================')
+from random import randint
+print('----- VAMOS JOGAR PAR OU IMPAR -----')
+par = 'P'
+impar = 'I'
+contador = 0
+while True:
+    jogador = int(input('Digite um numero: '))
+    computador = randint(0,10)
+    resultado = computador + jogador
+    escolha = ' '
+    while escolha not in 'PI':
+        escolha = str(input('Par [P] ou Impar [I]: ')).upper().strip()[0]
+    print(f'Voce jogou {jogador} e o computador {computador}. Total de {computador + jogador} ', end='' )
+    print('deu PAR' if resultado % 2 == 0 else 'deu IMPAR')
+    if resultado % 2 == 0:
+        if escolha == par:
+            contador += 1
+            print('Voce ganhou!!!')
+        else:
+            print('Voce perdeu!!!')
+            break
+    if resultado % 2 == 1:
+        if escolha == impar:
+            contador += 1
+            print('Voce ganhou!!!')
+        else:
+            print('Voce perdeu!!!')
+            break
+print(f'GAMER OVER! Voce venceu {contador} vezes.')
+
+
+# Desafio 069
+# Crie um programa que leia a idade e o sexo de varias pessoas. A cada pessoa cadastrada, o programa devera perguntar se o usuario quer ou nao continuar. No final, mostre:
+# A) Quantos pessoas tem mais de 18 anos.
+# B) Quantos homens foram cadastrados.
+# C) Quantos mulheres tem menos de 20 anos.
+print('==============================================================================')
+print('----- CADASTRO DE PESSOAS -----')
+cont = masculino = feminino = 0
+while True:
+    idade = int(input('Idade? '))
+    sexo = ' '
+    while sexo not in 'MF':
+        sexo = str(input('sexo: [M/F] ')).upper().strip()[0]
+    continuar = ' '
+    while continuar not in 'SN':
+        print('~'*40)
+        continuar = str(input('Quer continuar? [Sim / Nao] ')).upper().strip()[0]
+    print('~'*40)
+    if idade >= 18:
+        cont += 1
+    if sexo == 'M':
+        masculino += 1
+    if sexo == 'F':
+        if idade < 20:
+            feminino += 1
+    if continuar not in 'S':
+        break
+print(f'Tem {cont} pessoas maiores de 18 anos.')
+print(f'Foram cadastrado {masculino} homens.')
+print(f'Tem {feminino} mulheres menor de 20 anos.')
+print('~'*40)
