@@ -285,3 +285,36 @@ print(f'Tem {cont} pessoas maiores de 18 anos.')
 print(f'Foram cadastrado {masculino} homens.')
 print(f'Tem {feminino} mulheres menor de 20 anos.')
 print('~'*40)
+
+
+# Desafio 070
+# Crie um programa que leia o nome e o preço de varios produtos. O programa devera perguntar se o usuario vai continuar. No final, mostre:
+# A) Qual e o total gasto na compra.
+# B) Quantos produtos custam mais de R$1000.
+# C) Qual e o nome do produto mais barato.
+print('==============================================================================')
+print('----- LOJA PONTO DC -----')
+total = caro = barato = repeticao = 0
+probarato = ''
+while True:
+    produto = str(input('Nome do produto: '))
+    valor = float(input('Preco: R$'))
+    print('='*50)
+    total += valor
+    repeticao += 1
+    if valor >= 1000:
+        caro += 1
+    if repeticao == 1 or valor < barato:
+        barato = valor 
+        probarato = produto
+    r = ' '    
+    while r not in 'SN':
+        r = str(input('Quer continuar a compra? [S/N]')).strip().upper()[0]
+        print('='*50)
+    if r == 'N':
+        break
+print('='*50)
+print(f'Valor total da compra R${total:.2f}')
+print(f'Tem {caro} produtos mais de R$1000') 
+print(f'O produto mais barato e o {probarato} que custa R${barato:.2f}')
+print('='*50) 
