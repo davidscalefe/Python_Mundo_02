@@ -318,3 +318,36 @@ print(f'Valor total da compra R${total:.2f}')
 print(f'Tem {caro} produtos mais de R$1000') 
 print(f'O produto mais barato e o {probarato} que custa R${barato:.2f}')
 print('='*50) 
+
+
+# Desafio 071
+# Crie um programa que simule o funcionamento de um caixa eletronico. No inicio, pergunte ao usuario qual sera o valor a ser sacado (numero inteiro) e o programa vai informar quantas cedulas de cada valor serao entregues.
+# OBS: Considere que o caixa possui cedulas de R$50, R$20, R$10 e R$1.
+print('==============================================================================')
+print('-'*40)
+print('{:^40}'.format('BANCO DSC'))
+print('-'*40)
+print('Cedulas disponiveis! \nR$1, R$10, R$20, R$50')
+valor = int(input('Qual o valor para saque? R$'))
+total = valor
+nota = 50
+contnota = 0
+while True:
+    if total >= nota:
+        total -= nota
+        contnota += 1
+    else:
+        if contnota > 0:
+            print(f'Total de {contnota} cedulas de R${nota}')
+        if nota == 50:
+            nota = 20
+        elif nota == 20:
+            nota = 10
+        elif nota == 10:
+            nota = 1
+        contnota = 0
+        if total == 0:
+            break
+print('-'*40)
+print('Saque finalizado, Volte sempre!')
+  
