@@ -350,4 +350,3 @@ while True:
             break
 print('-'*40)
 print('Saque finalizado, Volte sempre!')
-  
